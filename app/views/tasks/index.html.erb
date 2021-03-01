@@ -1,0 +1,17 @@
+<h1>Tasks</h1>
+
+<div>
+    <% @tasks.each do |task| %>
+      <%= form_for task do |form| %>
+        <%= form.check_box :completed %>
+        <%= link_to task.title, task_path(task) %>
+        <%# form.label :completed, task.title %>
+      <% end %>
+    <%end%>
+</div>
+
+<%= link_to "Create new task", new_task_path %>
+
+
+
+
